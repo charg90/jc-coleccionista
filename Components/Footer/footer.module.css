@@ -1,0 +1,24 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #087edf;
+  padding: 10px;
+}
+.logoContainer {
+  display: flex;
+}
+
+.contactoContainer {
+  font-family: var(--font-rasa);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .footerContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+  }
+}

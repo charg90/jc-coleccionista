@@ -1,4 +1,3 @@
-import "./tailwind-global.css";
 import { Rasa } from "@next/font/google";
 
 const rasa = Rasa({

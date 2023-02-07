@@ -5,7 +5,7 @@ import styles from "./home.module.css";
 import photoProfile from "../public/fotoPerfil.jpg";
 import local from "../public/localSantelmo.jpg";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <main className={styles.homeContainer}>
@@ -28,7 +28,7 @@ export default function Home() {
             </div>
             <h2 className={styles.subtitle}> Que colecciono? </h2>
             <div className={styles.profileContainer}>
-              <p>
+              <p className={styles.fadeInTop}>
                 lorem ipsum dolor sit amet, consectetur adip Lorem, ipsum dolor
                 sit amet consectetur adipisicing elit. Maiores in officia
                 cupiditate reprehenderit vitae repellat aperiam quas, accusamus

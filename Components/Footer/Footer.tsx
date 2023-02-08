@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "./../../public/logofinal.png";
+import Logo from "./../../public/logoFinal.png";
 import Facebook from "./../../public/facebook-1-svgrepo-com.svg";
 import Instagram from "./../../public/instagram-1-svgrepo-com.svg";
 import Meli from "./../../public/mercadolibre-svgrepo-com.svg";

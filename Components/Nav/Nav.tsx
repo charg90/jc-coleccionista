@@ -1,6 +1,6 @@
 import styles from "./nav.module.css";
 import localFont from "@next/font/local";
-import logo from "./../../public/logofinal.png";
+import logo from "./../../public/logoFinal.png";
 import Image from "next/image";
 const champion = localFont({
   src: [

@@ -5,7 +5,7 @@ import Image from "next/image";
 const champion = localFont({
   src: [
     {
-      path: "./fonts/NationalChampionBold.woff.ttf",
+      path: "./Fonts/NationalChampionBold.woff.ttf",
       weight: "700",
       style: "normal",
     },

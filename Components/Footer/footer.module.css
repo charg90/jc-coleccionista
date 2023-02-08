@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background-color: #087edf;
+  background-color: var(--blue);
+  color: var(--yellow);
   padding: 10px;
 }
 .logoContainer {

@@ -1,0 +1,15 @@
+.navContainer {
+  display: flex;
+  background-color: var(--blue);
+  height: 75px;
+  align-items: center;
+  justify-content: space-around;
+  font-family: var(--font-champion);
+}
+
+.navText {
+  margin: 0;
+  color: var(--yellow);
+  font-size: 17px;
+  font-weight: 700;
+}

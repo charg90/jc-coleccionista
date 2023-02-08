@@ -1,5 +1,6 @@
 import { Rasa } from "@next/font/google";
-import styles from "./home.module.css";
+import "./global.css";
+
 const rasa = Rasa({
   weight: ["400", "700"],
   subsets: ["latin"],
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={rasa.className}>
       <head />
-      <body className={styles.body}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

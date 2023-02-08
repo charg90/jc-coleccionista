@@ -4,10 +4,12 @@ import Banner from "./../public/302180112_501737175289456_8291271586690268658_n.
 import styles from "./home.module.css";
 import photoProfile from "../public/fotoPerfil.jpg";
 import local from "../public/localSantelmo.jpg";
+import Nav from "@/Components/Nav/Nav";
 
 export default async function Home() {
   return (
     <>
+      <Nav />
       <main className={styles.homeContainer}>
         <Image src={Banner} alt="banner-image" className={styles.homeImage} />
         <div className={styles.infoContainer}>

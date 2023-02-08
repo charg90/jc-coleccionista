@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./card.module.css";
 import whatsapp from "./../../public/whatsapp.svg";
 import Image from "next/image";
+import Link from "next/link";
 interface Cardata {
   id: number;
   codigo: string;
@@ -26,10 +27,19 @@ const Cards = ({ data }: Props) => {
   return (
     <div className={styles.card}>
       <div className={styles.cardInfo}>
-        <p className={styles.info}>{data.title}</p>
-        <p>{data.codigo}</p>
+        <div className={styles.cardTextContainer}>
+          <p className={styles.cardText}>{data.title}</p>
+          <p className={styles.cardText}>codigo:{data.codigo}</p>
+        </div>
+
         <div className={styles.actionsContainer}>
-          <Image src={whatsapp} alt="whatsappp" />
+          <Link
+            href={`https://wa.me/5491167521676?text=Buenas%20te%20consulto%20por%20${data.title}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={whatsapp} alt="whatsappp" />
+          </Link>
           <button
             onClick={() => handlerLocation(data.codigo)}
             className={styles.btnCard}

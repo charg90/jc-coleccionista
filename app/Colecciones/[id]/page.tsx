@@ -20,12 +20,17 @@ const fetchDescription = (id: string) => {
 
 const Producto = async ({ params }: Params) => {
   const { id } = params;
-  const products: fetchProducts[] = await fetchProduct(id);
-  const description = await fetchDescription(id);
+  const productsData = fetchProduct(id);
+  const descriptionData = fetchDescription(id);
+
+  const [products, description] = await Promise.all([
+    productsData,
+    descriptionData,
+  ]);
 
   return (
     <section>
-      {/* {products.map((product) => (
+      {products.map((product) => (
         <div key={product.id} className={styles.singleProductContainer}>
           <Image
             width={400}
@@ -40,7 +45,7 @@ const Producto = async ({ params }: Params) => {
             <div>{description}</div>
           </div>
         </div>
-      ))} */}
+      ))}
     </section>
   );
 };

@@ -4,6 +4,11 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["http2.mlstatic.com"],
+  },
 };
 
 module.exports = nextConfig;
+
+//https://http2.mlstatic.com/

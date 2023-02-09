@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { ProductsInfo } from "@/dataProductsInfo/dataProductsInfo";
 import Cards from "@/Components/Cards/Cards";
 import styles from "./colecciones.module.css";

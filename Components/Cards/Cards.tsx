@@ -1,8 +1,8 @@
-import React from "react";
 import styles from "./card.module.css";
 import whatsapp from "./../../public/whatsapp.svg";
 import Image from "next/image";
 import Link from "next/link";
+
 interface Cardata {
   id: number;
   codigo: string;
@@ -14,16 +14,6 @@ interface Props {
 }
 
 const Cards = ({ data }: Props) => {
-  const handlerLocation = (codigo: string) => {
-    const response = fetch(`https://api.mercadolibre.com/items/${codigo}`)
-      .then((response) => response.json())
-      .then((data) => {
-        window.open(data.permalink, "_blank");
-      })
-      .catch((err) => console.log(err));
-    console.log(response);
-  };
-
   return (
     <div className={styles.card}>
       <div className={styles.textBox}>
@@ -38,12 +28,9 @@ const Cards = ({ data }: Props) => {
           >
             <Image width={30} src={whatsapp} alt="whatsappp" />
           </Link>
-          <button
-            onClick={() => handlerLocation(data.codigo)}
-            className={styles.btnCard}
-          >
-            Ver mas
-          </button>
+          <Link href={`Colecciones/${data.codigo}`}>
+            <button>Ver mas</button>
+          </Link>
         </div>
       </div>
     </div>

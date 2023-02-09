@@ -25,7 +25,7 @@ const Producto = async ({ params }: Params) => {
 
   return (
     <section>
-      {products.map((product) => (
+      {/* {products.map((product) => (
         <div key={product.id} className={styles.singleProductContainer}>
           <Image
             width={400}
@@ -40,7 +40,7 @@ const Producto = async ({ params }: Params) => {
             <div>{description}</div>
           </div>
         </div>
-      ))}
+      ))} */}
     </section>
   );
 };

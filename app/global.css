@@ -8,5 +8,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #ebebeb;
+  background-color: var(--grey);
+  font-family: "Poppins";
 }

@@ -5,17 +5,17 @@ import styles from "./home.module.css";
 import photoProfile from "../public/fotoPerfil.jpg";
 import local from "../public/localSantelmo.jpg";
 import Nav from "@/Components/Nav/Nav";
+import { Route } from "@/models/routes.models";
 
 export default async function Home() {
   return (
     <>
-      <Nav />
+      <Nav pathNames={[Route.COLECCIONES, Route.PREGUNTAS]} />
       <main className={styles.homeContainer}>
         <Image src={Banner} alt="banner-image" className={styles.homeImage} />
         <div className={styles.infoContainer}>
-          <h1 className={styles.title}>JC coleccionista</h1>
           <div>
-            <h2 className={styles.subtitle}> Quien Soy ? </h2>
+            <h1 className={styles.subtitle}> Quien Soy ? </h1>
             <div className={styles.profileContainer}>
               <Image
                 src={photoProfile}

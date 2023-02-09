@@ -5,6 +5,7 @@ import Facebook from "./../../public/facebook-1-svgrepo-com.svg";
 import Instagram from "./../../public/instagram-1-svgrepo-com.svg";
 import Meli from "./../../public/mercadolibre-svgrepo-com.svg";
 import styles from "./footer.module.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -15,10 +16,15 @@ const Footer = () => {
       <div className={styles.logoContainer}>
         <Image width="40" height="50" src={Facebook} alt="facebook-Logo" />
         <Image width="40" height="50" src={Instagram} alt="instagram-Logo" />
-        <Image width="40" height="50" src={Meli} alt="meli-Logo" />
+        <Link
+          href={`https://wa.me/5491167521676?`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image width="40" height="50" src={Meli} alt="meli-Logo" />
+        </Link>
       </div>
       <div className={styles.contactoContainer}>
-        <p>Celular</p>
         <p>Entrega Lanus</p>
         <p>Entrega San Telmo</p>
         <p>Entrega la Boca</p>

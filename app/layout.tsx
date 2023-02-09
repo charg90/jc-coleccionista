@@ -1,7 +1,7 @@
-import { Rasa } from "@next/font/google";
+import { Poppins } from "@next/font/google";
 import "./global.css";
 
-const rasa = Rasa({
+const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-rasa",
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={rasa.className}>
+    <html lang="es" className={poppins.className}>
       <head />
       <body>{children}</body>
     </html>

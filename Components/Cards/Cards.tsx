@@ -26,19 +26,17 @@ const Cards = ({ data }: Props) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.cardInfo}>
-        <div className={styles.cardTextContainer}>
-          <p className={styles.cardText}>{data.title}</p>
-          <p className={styles.cardText}>codigo:{data.codigo}</p>
+      <div className={styles.textBox}>
+        <div className={styles.textContent}>
+          <p className={styles.h1}>{data.title.substring(0, 40)}</p>
         </div>
-
         <div className={styles.actionsContainer}>
           <Link
             href={`https://wa.me/5491167521676?text=Buenas%20te%20consulto%20por%20${data.title}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={whatsapp} alt="whatsappp" />
+            <Image width={30} src={whatsapp} alt="whatsappp" />
           </Link>
           <button
             onClick={() => handlerLocation(data.codigo)}

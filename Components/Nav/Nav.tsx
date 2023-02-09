@@ -25,12 +25,10 @@ const Nav = ({ pathNames }: props) => {
     <div className={champion.className}>
       <div className={`${styles.navContainer} ${champion.className}`}>
         <Image width={70} src={logo} alt="logo" />
-        {pathNames.map((pathName) => (
-          <>
-            <Link href={pathName.path} className={styles.navText}>
-              {pathName.name}
-            </Link>
-          </>
+        {pathNames.map((pathName, index) => (
+          <Link href={pathName.path} className={styles.navText} key={index}>
+            {pathName.name}
+          </Link>
         ))}
       </div>
     </div>

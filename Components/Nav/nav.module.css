@@ -10,6 +10,26 @@
 .navText {
   margin: 0;
   color: var(--yellow);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.navText::before {
+  margin-left: auto;
+}
+
+.navText::after,
+.navText::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--yellow);
+  display: block;
+  transition: 0.5s;
+}
+
+.navText:hover::after,
+.navText:hover::before {
+  width: 100%;
 }

@@ -3,7 +3,9 @@ import Image from "next/image";
 import styles from "./singleProduct.module.css";
 
 interface Params {
-  params: {};
+  params: {
+    id: string;
+  };
 }
 const fetchProduct = async (id: string) => {
   const response = await fetch(`https://api.mercadolibre.com/items/${id}`);
@@ -16,11 +18,11 @@ const fetchDescription = (id: string) => {
   ).then((response) => response.json().then((data) => data.plain_text));
 };
 
-const Producto = async ({ params = null }: any) => {
-  let { id } = params;
+const Producto = async ({ params }: Params) => {
+  const { id } = params;
 
   const products = await fetchProduct(id);
-  const descriptionData = fetchDescription(id);
+  const descriptionData = await fetchDescription(id);
 
   return (
     <section>
@@ -29,7 +31,11 @@ const Producto = async ({ params = null }: any) => {
           <Image
             width={400}
             height={400}
-            src={product.pictures[0].url}
+            src={
+              product.pictures && product.pictures[0]
+                ? product.pictures[0].url
+                : ""
+            }
             alt="fotoProducto"
           />
           <div>

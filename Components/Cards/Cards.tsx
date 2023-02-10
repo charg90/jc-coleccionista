@@ -28,7 +28,7 @@ const Cards = ({ data }: Props) => {
           >
             <Image width={30} src={whatsapp} alt="whatsappp" />
           </Link>
-          <Link href={`/Colecciones/MLA783133370`}>
+          <Link href={`/Colecciones/${data.codigo}`}>
             <button className={styles.btnCard}>Ver mas</button>
           </Link>
         </div>

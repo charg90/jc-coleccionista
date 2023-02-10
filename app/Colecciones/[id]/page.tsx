@@ -7,27 +7,21 @@ interface Params {
     id: string;
   };
 }
+const fetchProduct = async (id: string) => {
+  const response = await fetch(`https://api.mercadolibre.com/items/${id}`);
+  return await response.json();
+};
+const fetchDescription = (id: string) => {
+  return fetch(
+    `https://api.mercadolibre.com/items/${id}/description#json`
+  ).then((response) => response.json().then((data) => data.plain_text));
+};
 
 const Producto = async ({ params }: Params) => {
   const { id } = params;
-  const fetchProduct = (id: string) => {
-    return fetch(`https://api.mercadolibre.com/items/${id}`).then((response) =>
-      response.json().then((data) => [data])
-    );
-  };
-  const fetchDescription = (id: string) => {
-    return fetch(
-      `https://api.mercadolibre.com/items/${id}/description#json`
-    ).then((response) => response.json().then((data) => data.plain_text));
-  };
 
-  const productsData = fetchProduct(id);
+  const products = await fetchProduct(id);
   const descriptionData = fetchDescription(id);
-
-  const [products, description] = await Promise.all([
-    productsData,
-    descriptionData,
-  ]);
 
   return (
     <section>
@@ -43,7 +37,7 @@ const Producto = async ({ params }: Params) => {
             <div>
               <p>{product.title}</p>
             </div>
-            <div>{description}</div>
+            {/* <div>{description}</div> */}
           </div>
         </div>
       ))}

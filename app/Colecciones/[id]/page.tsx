@@ -9,7 +9,8 @@ interface Params {
 }
 const fetchProduct = async (id: string) => {
   const response = await fetch(`https://api.mercadolibre.com/items/${id}`);
-  return await response.json();
+  const resposeToJson = await response.json();
+  return [resposeToJson];
 };
 const fetchDescription = (id: string) => {
   return fetch(

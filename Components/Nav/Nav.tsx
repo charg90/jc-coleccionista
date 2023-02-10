@@ -23,7 +23,7 @@ const champion = localFont({
 const Nav = ({ pathNames }: props) => {
   return (
     <div className={champion.className}>
-      <div className={`${styles.navContainer} ${champion.className}`}>
+      <div className={`${styles.navContainer} `}>
         <Image width={70} src={logo} alt="logo" />
         {pathNames.map((pathName, index) => (
           <Link href={pathName.path} className={styles.navText} key={index}>

@@ -1,7 +1,10 @@
+import Footer from "@/Components/Footer/Footer";
+import Nav from "@/Components/Nav/Nav";
 import { fetchProducts } from "@/models/fetchProducts.models";
+import { Route } from "@/models/routes.models";
 import Image from "next/image";
 import styles from "./singleProduct.module.css";
-
+import whatsApp from "./../../../public/whatsapp.svg";
 interface Params {
   params: {
     id: string;
@@ -21,31 +24,37 @@ const fetchDescription = (id: string) => {
 const Producto = async ({ params }: Params) => {
   const { id } = params;
 
-  const products = await fetchProduct(id);
-  const descriptionData = await fetchDescription(id);
+  const products: fetchProducts[] = await fetchProduct(id);
+  const description = await fetchDescription(id);
 
   return (
-    <section>
+    <section className={styles.container}>
+      <Nav pathNames={[Route.HOME, Route.PREGUNTAS]} />
       {products.map((product) => (
-        <div key={product.id} className={styles.singleProductContainer}>
-          <Image
-            width={400}
-            height={400}
-            src={
-              product.pictures && product.pictures[0]
-                ? product.pictures[0].url
-                : ""
-            }
-            alt="fotoProducto"
-          />
-          <div>
+        <div className={styles.ccontainer} key={product.id}>
+          <div className={styles.singleProductContainer}>
+            <Image
+              width={360}
+              height={360}
+              src={
+                product.pictures && product.pictures[0]
+                  ? product.pictures[0].url
+                  : ""
+              }
+              alt="fotoProducto"
+              priority
+            />
+
             <div>
-              <p>{product.title}</p>
+              <p className={styles.productTitle}>{product.title}</p>
+              <p className={styles.productText}>{description}</p>
+              <button className={styles.productBtn}>whatsapp</button>
             </div>
-            {/* <div>{description}</div> */}
           </div>
         </div>
       ))}
+
+      <Footer />
     </section>
   );
 };

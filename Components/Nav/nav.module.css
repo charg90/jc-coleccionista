@@ -10,9 +10,10 @@
 .navText {
   margin: 0;
   color: var(--yellow);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  text-align: center;
 }
 
 .navText::before {
@@ -32,4 +33,10 @@
 .navText:hover::after,
 .navText:hover::before {
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .navText {
+    font-size: 20px;
+  }
 }

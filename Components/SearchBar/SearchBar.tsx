@@ -15,13 +15,15 @@ const SearchBar = ({ setProductsInfo, products }: SearchBarProps) => {
     setProductsInfo(filterProducts);
   };
   return (
-    <input
-      type="text"
-      name="text"
-      className={styles.input}
-      placeholder="Type something here...."
-      onChange={handleChange}
-    />
+    <div className={styles.inputContainer}>
+      <input
+        type="text"
+        name="text"
+        className={styles.input}
+        placeholder="Buscar ..."
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 

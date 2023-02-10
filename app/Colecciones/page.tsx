@@ -12,8 +12,6 @@ import SearchBar from "@/Components/SearchBar/SearchBar";
 const Colecciones = () => {
   const [products, setProductsInfo] = useState<product[]>(ProductsInfo);
 
-  const [search, setSearch] = useState("");
-
   return (
     <>
       <Nav pathNames={[Route.HOME, Route.PREGUNTAS]} />

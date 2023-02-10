@@ -1,12 +1,16 @@
+.inputContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .input {
-  color: #8707ff;
-  border: 2px solid #8707ff;
-  border-radius: 10px;
+  color: var(--blue);
+  border: none;
+  border-bottom: 2px solid var(--blue);
+
   padding: 10px 25px;
   background: transparent;
-  max-width: 190px;
-}
-
-.input:active {
-  box-shadow: 2px 2px 15px #8707ff inset;
+  max-width: 200px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
